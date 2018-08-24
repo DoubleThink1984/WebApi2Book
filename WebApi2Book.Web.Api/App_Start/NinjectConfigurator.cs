@@ -16,6 +16,7 @@ using WebApi2Book.Common.TypeMapping;
 using WebApi2Book.Data.QueryProcessors;
 using WebApi2Book.Data.SqlServer.Mapping;
 using WebApi2Book.Data.SqlServer.QueryProcessors;
+using WebApi2Book.Web.Api.AutoMappingConfiguration;
 using WebApi2Book.Web.Common;
 using WebApi2Book.Web.Common.Security;
 //using WebApi2Book.Common.Security;
@@ -130,9 +131,9 @@ namespace WebApi2Book.Web.Api
                 .To<TaskToTaskEntityAutoMapperTypeConfigurator>()
                 .InSingletonScope();
 
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<NewTaskV2ToTaskEntityAutoMapperTypeConfigurator>()
-            //    .InRequestScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<NewTaskV2ToTaskEntityAutoMapperTypeConfigurator>()
+                .InRequestScope();
         }
 
         private void ConfigureUserSession(IKernel container)
