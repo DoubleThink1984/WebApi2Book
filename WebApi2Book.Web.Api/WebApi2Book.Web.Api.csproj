@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FluentNHibernate, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentNHibernate.2.1.2\lib\net461\FluentNHibernate.dll</HintPath>
@@ -135,6 +136,15 @@
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\NinjectConfigurator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AutoMappingConfiguration\NewTaskToTaskEntityAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\NewTaskV2ToTaskEntityAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\StatusEntityToStatusAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\StatusToStatusEntityAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\TaskAssigneesResolver.cs" />
+    <Compile Include="AutoMappingConfiguration\TaskEntityToTaskAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\TaskToTaskEntityAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\UserEntityToUserAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\UserToUserEntityAutoMapperTypeConfigurator.cs" />
     <Compile Include="Controllers\V1\TaskController.cs" />
     <Compile Include="Controllers\V2\TaskController.cs" />
     <Compile Include="Global.asax.cs">

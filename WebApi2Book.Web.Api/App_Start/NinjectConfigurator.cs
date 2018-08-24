@@ -11,8 +11,13 @@ using Ninject.Activation;
 using Ninject.Web.Common;
 using WebApi2Book.Common;
 using WebApi2Book.Common.Logging;
+using WebApi2Book.Common.Security;
+using WebApi2Book.Common.TypeMapping;
+using WebApi2Book.Data.QueryProcessors;
 using WebApi2Book.Data.SqlServer.Mapping;
+using WebApi2Book.Data.SqlServer.QueryProcessors;
 using WebApi2Book.Web.Common;
+using WebApi2Book.Web.Common.Security;
 //using WebApi2Book.Common.Security;
 //using WebApi2Book.Common.TypeMapping;
 //using WebApi2Book.Data.QueryProcessors;
@@ -67,30 +72,30 @@ namespace WebApi2Book.Web.Api
             //container.Bind<IPagedDataRequestFactory>().To<PagedDataRequestFactory>().InSingletonScope();
 
             //container.Bind<IAllStatusesInquiryProcessor>().To<AllStatusesInquiryProcessor>().InRequestScope();
-            //container.Bind<IAllStatusesQueryProcessor>().To<AllStatusesQueryProcessor>().InRequestScope();
+            container.Bind<IAllStatusesQueryProcessor>().To<AllStatusesQueryProcessor>().InRequestScope();
             //container.Bind<IStatusLinkService>().To<StatusLinkService>().InRequestScope();
 
             //container.Bind<IAllUsersInquiryProcessor>().To<AllUsersInquiryProcessor>().InRequestScope();
-            //container.Bind<IAllUsersQueryProcessor>().To<AllUsersQueryProcessor>().InRequestScope();
+            container.Bind<IAllUsersQueryProcessor>().To<AllUsersQueryProcessor>().InRequestScope();
             //container.Bind<IUserByIdInquiryProcessor>().To<UserByIdInquiryProcessor>().InRequestScope();
-            //container.Bind<IUserByIdQueryProcessor>().To<UserByIdQueryProcessor>().InRequestScope();
+            container.Bind<IUserByIdQueryProcessor>().To<UserByIdQueryProcessor>().InRequestScope();
             //container.Bind<IUserLinkService>().To<UserLinkService>().InRequestScope();
 
             //container.Bind<ITasksControllerDependencyBlock>().To<TasksControllerDependencyBlock>().InRequestScope();
             //container.Bind<IAddTaskMaintenanceProcessor>().To<AddTaskMaintenanceProcessor>().InRequestScope();
-            //container.Bind<IAddTaskQueryProcessor>().To<AddTaskQueryProcessor>().InRequestScope();
+            container.Bind<IAddTaskQueryProcessor>().To<AddTaskQueryProcessor>().InRequestScope();
             //container.Bind<IUpdateTaskMaintenanceProcessor>().To<UpdateTaskMaintenanceProcessor>().InRequestScope();
             //container.Bind<IUpdateablePropertyDetector>().To<JObjectUpdateablePropertyDetector>().InSingletonScope();
-            //container.Bind<IUpdateTaskQueryProcessor>().To<UpdateTaskQueryProcessor>().InRequestScope();
-            //container.Bind<IDeleteTaskQueryProcessor>().To<DeleteTaskQueryProcessor>().InRequestScope();
+            container.Bind<IUpdateTaskQueryProcessor>().To<UpdateTaskQueryProcessor>().InRequestScope();
+            container.Bind<IDeleteTaskQueryProcessor>().To<DeleteTaskQueryProcessor>().InRequestScope();
             //container.Bind<IStartTaskWorkflowProcessor>().To<StartTaskWorkflowProcessor>().InRequestScope();
             //container.Bind<ICompleteTaskWorkflowProcessor>().To<CompleteTaskWorkflowProcessor>().InRequestScope();
             //container.Bind<IReactivateTaskWorkflowProcessor>().To<ReactivateTaskWorkflowProcessor>().InRequestScope();
-            //container.Bind<IUpdateTaskStatusQueryProcessor>().To<UpdateTaskStatusQueryProcessor>().InRequestScope();
+            container.Bind<IUpdateTaskStatusQueryProcessor>().To<UpdateTaskStatusQueryProcessor>().InRequestScope();
             //container.Bind<IAllTasksInquiryProcessor>().To<AllTasksInquiryProcessor>().InRequestScope();
-            //container.Bind<IAllTasksQueryProcessor>().To<AllTasksQueryProcessor>().InRequestScope();
+            container.Bind<IAllTasksQueryProcessor>().To<AllTasksQueryProcessor>().InRequestScope();
             //container.Bind<ITaskByIdInquiryProcessor>().To<TaskByIdInquiryProcessor>().InRequestScope();
-            //container.Bind<ITaskByIdQueryProcessor>().To<TaskByIdQueryProcessor>().InRequestScope();
+            container.Bind<ITaskByIdQueryProcessor>().To<TaskByIdQueryProcessor>().InRequestScope();
             //container.Bind<ITaskLinkService>().To<TaskLinkService>().InRequestScope();
 
             //container.Bind<ITaskUsersInquiryProcessor>().To<TaskUsersInquiryProcessor>().InRequestScope();
@@ -102,28 +107,28 @@ namespace WebApi2Book.Web.Api
 
         private void ConfigureAutoMapper(IKernel container)
         {
-            //container.Bind<IAutoMapper>().To<AutoMapperAdapter>().InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<StatusEntityToStatusAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<StatusToStatusEntityAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<UserEntityToUserAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<UserToUserEntityAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<NewTaskToTaskEntityAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<TaskEntityToTaskAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
-            //container.Bind<IAutoMapperTypeConfigurator>()
-            //    .To<TaskToTaskEntityAutoMapperTypeConfigurator>()
-            //    .InSingletonScope();
+            container.Bind<IAutoMapper>().To<AutoMapperAdapter>().InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<StatusEntityToStatusAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<StatusToStatusEntityAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<UserEntityToUserAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<UserToUserEntityAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<NewTaskToTaskEntityAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<TaskEntityToTaskAutoMapperTypeConfigurator>()
+                .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+                .To<TaskToTaskEntityAutoMapperTypeConfigurator>()
+                .InSingletonScope();
 
             //container.Bind<IAutoMapperTypeConfigurator>()
             //    .To<NewTaskV2ToTaskEntityAutoMapperTypeConfigurator>()
@@ -132,9 +137,9 @@ namespace WebApi2Book.Web.Api
 
         private void ConfigureUserSession(IKernel container)
         {
-            //var userSession = new UserSession();
-            //container.Bind<IUserSession>().ToConstant(userSession).InSingletonScope();
-            //container.Bind<IWebUserSession>().ToConstant(userSession).InSingletonScope();
+            var userSession = new UserSession();
+            container.Bind<IUserSession>().ToConstant(userSession).InSingletonScope();
+            container.Bind<IWebUserSession>().ToConstant(userSession).InSingletonScope();
         }
 
         private void ConfigureNHibernate(IKernel container)

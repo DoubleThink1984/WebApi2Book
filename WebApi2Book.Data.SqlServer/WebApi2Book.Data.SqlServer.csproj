@@ -67,6 +67,15 @@
     <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Mapping\VersionedClassMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessors\AddTaskQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\AllStatusesQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\AllTasksQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\AllUsersQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\DeleteTaskQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\TaskByIdQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\UpdateTaskQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\UpdateTaskStatusQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\UserByIdQueryProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebApi2Book.Common\WebApi2Book.Common.csproj">
