@@ -157,6 +157,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LinkServices\CommonLinkService.cs" />
+    <Compile Include="LinkServices\ICommonLinkService.cs" />
+    <Compile Include="LinkServices\IStatusLinkService.cs" />
+    <Compile Include="LinkServices\ITaskLinkService.cs" />
+    <Compile Include="LinkServices\ITaskUsersLinkService.cs" />
+    <Compile Include="LinkServices\IUserLinkService.cs" />
+    <Compile Include="LinkServices\StatusLinkService.cs" />
+    <Compile Include="LinkServices\TaskLinkService.cs" />
+    <Compile Include="LinkServices\TaskUsersLinkService.cs" />
+    <Compile Include="LinkServices\UserLinkService.cs" />
+    <Compile Include="MaintenanceProcessing\AddTaskMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\AddTaskMaintenanceProcessorV2.cs" />
+    <Compile Include="MaintenanceProcessing\CompleteTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\IAddTaskMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\IAddTaskMaintenanceProcessorV2.cs" />
+    <Compile Include="MaintenanceProcessing\ICompleteTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\IReactivateTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\IStartTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\ITaskUsersMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\IUpdateTaskMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\LocationLinkCalculator.cs" />
+    <Compile Include="MaintenanceProcessing\ReactivateTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\StartTaskWorkflowProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\TaskCreatedActionResult.cs" />
+    <Compile Include="MaintenanceProcessing\TaskUsersMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\UpdateTaskMaintenanceProcessor.cs" />
+    <Compile Include="MaintenanceProcessing\ValidateTaskUpdateRequestAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,8 +198,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="InquiryProcessing\" />
-    <Folder Include="LinkServices\" />
-    <Folder Include="MaintenanceProcessing\" />
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
